@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Boxing Score</string>
+    <string name="title">Boxing</string>
+    <string name="round">Round </string>
+    <string name="number">1</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="blue_score">0</string>
+    <string name="red_score">0</string>
+    <string name="red_1">+1</string>
+    <string name="red_2">+2</string>
+    <string name="red_3">+3</string>
+    <string name="red_4">+4</string>
+    <string name="red_5">+5</string>
+    <string name="next_round">Next Round</string>
+    <string name="knockout">Knockouts</string>
+
+</resources>
