@@ -29,11 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
         Button red1 = (Button) findViewById(R.id.red_1);
         red1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 redScore = redScore + 1;
+                updateRST(redScore);
             }
         });
         Button red2 = (Button) findViewById(R.id.red_2);
@@ -41,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 redScore = redScore + 2;
+                updateRST(redScore);
             }
         });
         Button red3 = (Button) findViewById(R.id.red_3);
@@ -48,15 +56,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 redScore = redScore + 3;
+                updateRST(redScore);
             }
         });
 
 
-        Button redKO = (Button) findViewById(R.id.red_ko);
+        final Button redKO = (Button) findViewById(R.id.red_ko);
         redKO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 redKOS = redKOS + 1;
+                updateRKON(redKOS);
             }
         });
         Button blue1 = (Button) findViewById(R.id.blue_1);
@@ -64,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blueScore = blueScore + 1;
+                updateBST(blueScore);
             }
         });
         Button blue2 = (Button) findViewById(R.id.blue_2);
@@ -71,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blueScore = blueScore + 2;
+                updateBST(blueScore);
             }
         });
         Button blue3 = (Button) findViewById(R.id.blue_3);
@@ -78,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blueScore = blueScore + 3;
+                updateBST(blueScore);
             }
         });
 
@@ -86,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 blueKOS = blueKOS + 1;
+                updateBKON(blueKOS);
             }
         });
 
@@ -96,18 +110,54 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 round = round + 1;
-                TextView redScoreT = (TextView) findViewById(R.id.redScore);
-                TextView blueScoreT = (TextView) findViewById(R.id.blueScore);
-                TextView roundNum = (TextView) findViewById(R.id.round_number);
-                redScoreT.setText(String.valueOf(redScore));
-                blueScoreT.setText(String.valueOf(blueScore));
-                roundNum.setText(String.valueOf(round));
-                TextView redKON = (TextView) findViewById(R.id.redKON);
-                redKON.setText(String.valueOf(redKOS));
-                TextView blueKON = (TextView) findViewById(R.id.blueKON);
-                blueKON.setText(String.valueOf(blueKOS));
+                updateRound(round);
+
             }
         });
 
+        Button reset = (Button) findViewById(R.id.reset);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redScore = 0;
+                blueScore = 0;
+                redKOS = 0;
+                blueKOS = 0;
+                round = 1;
+                updateRST(redScore);
+                updateBST(blueScore);
+                updateRKON(redKOS);
+                updateBKON(blueKOS);
+                updateRound(round);
+
+            }
+        });
+
+
+
+    }
+
+    public void updateRST(int redScore){
+        TextView redScoreT = (TextView) findViewById(R.id.redScore);
+        redScoreT.setText(String.valueOf(redScore));
+    }
+    public void updateBST(int blueScore){
+        TextView blueScoreT = (TextView) findViewById(R.id.blueScore);
+        blueScoreT.setText(String.valueOf(blueScore));
+    }
+    public void updateRKON(int redKOS){
+        TextView redKON = (TextView) findViewById(R.id.redKON);
+        redKON.setText(String.valueOf(redKOS));
+    }
+    public void updateBKON(int blueKOS){
+        TextView blueKON = (TextView) findViewById(R.id.blueKON);
+        blueKON.setText(String.valueOf(blueKOS));
+
+    }
+    public void updateRound(int round){
+        TextView roundNum = (TextView) findViewById(R.id.round_number);
+        roundNum.setText(String.valueOf(round));
     }
 }
+
+
