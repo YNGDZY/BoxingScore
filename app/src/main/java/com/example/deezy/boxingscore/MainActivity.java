@@ -19,21 +19,10 @@ public class MainActivity extends AppCompatActivity {
     public int blueKOS = 0;
     public int redKOS = 0;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
-
-
-
-
-
 
         Button red1 = (Button) findViewById(R.id.red_1);
         red1.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 updateRST(redScore);
             }
         });
-
 
         final Button redKO = (Button) findViewById(R.id.red_ko);
         redKO.setOnClickListener(new View.OnClickListener() {
@@ -104,14 +92,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         Button nextRound = (Button) findViewById(R.id.nextRound);
         nextRound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 round = round + 1;
                 updateRound(round);
-
             }
         });
 
@@ -129,12 +115,8 @@ public class MainActivity extends AppCompatActivity {
                 updateRKON(redKOS);
                 updateBKON(blueKOS);
                 updateRound(round);
-
             }
         });
-
-
-
     }
 
     public void updateRST(int redScore){
@@ -152,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
     public void updateBKON(int blueKOS){
         TextView blueKON = (TextView) findViewById(R.id.blueKON);
         blueKON.setText(String.valueOf(blueKOS));
-
     }
     public void updateRound(int round){
         TextView roundNum = (TextView) findViewById(R.id.round_number);
